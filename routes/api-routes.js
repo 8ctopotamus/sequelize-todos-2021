@@ -23,9 +23,6 @@ router.post('/api/todos', async (req, res) => {
 router.put('/api/todos/:id', async (req, res) => {
   try {
     const id = req.params.id
-
-    console.log(req.body)
-
     await db.Todo.update(req.body, {
       where: { id }
     })
