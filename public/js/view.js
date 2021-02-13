@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
   form.addEventListener('submit', e => {
     e.preventDefault()
     const text = newTodoInput.value
-
-    console.log(JSON.stringify({ text }))
-
     fetch('/api/todos', {
       method: 'POST',
       body: JSON.stringify({ text }),
@@ -16,9 +13,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(err => console.error(err))
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .catch(err => console.error(err))
   })
 
 
